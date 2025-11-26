@@ -101,6 +101,9 @@ The dataset splits can be found [here](https://github.com/miccunifi/FRED/tree/ma
 
 Demos and examples can be found in the official [website](https://miccunifi.github.io/FRED/)
 
+### Multimodal pytorch dataset and dataloader 📷📸
+Please refer to `src/data/data.py` for an example pytorch dataset that yields synchronized RGB and Event frames for either the canonical or the challenging datasets. The script assumes that the canonical dataset is stored in the folder `FRED` (i.e. the dataset as downloaded from huggingface). To use the challenging dataset, run the `src/data/create_FRED_challenging_split.py` script.
+
 ---
 
 ## 🖼️ Examples
