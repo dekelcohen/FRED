@@ -113,10 +113,10 @@ Please refer to `src/data/data.py` for an example pytorch dataset that yields sy
 </div>
 <div style="text-align:center;">
   <div style="display:inline-block; margin:0 10px;">
-    <img src="https://github.com/miccunifi/FRED/blob/main/static/videos/webps/rgb_night.webp?raw=true" width="400"/>
+    <img src="https://github.com/miccunifi/FRED/blob/main/static/videos/webps/rgb_night.webp?raw=true" width="390"/>
   </div>
   <div style="display:inline-block; margin:0 10px;">
-    <img src="https://github.com/miccunifi/FRED/blob/main/static/videos/webps/event_night.webp?raw=true" width="400"/>
+    <img src="https://github.com/miccunifi/FRED/blob/main/static/videos/webps/event_night.webp?raw=true" width="390"/>
   </div>
 </div>
 
@@ -126,10 +126,10 @@ Please refer to `src/data/data.py` for an example pytorch dataset that yields sy
 </div>
 <div style="text-align:center;">
   <div style="display:inline-block; margin:0 10px;">
-    <img src="https://github.com/miccunifi/FRED/blob/main/static/videos/webps/rgb_rain.webp?raw=true" width="400"/>
+    <img src="https://github.com/miccunifi/FRED/blob/main/static/videos/webps/rgb_rain.webp?raw=true" width="390"/>
   </div>
   <div style="display:inline-block; margin:0 10px;">
-    <img src="https://github.com/miccunifi/FRED/blob/main/static/videos/webps/event_rain.webp?raw=true" width="400"/>
+    <img src="https://github.com/miccunifi/FRED/blob/main/static/videos/webps/event_rain.webp?raw=true" width="390"/>
   </div>
 </div>
 
@@ -138,10 +138,10 @@ Please refer to `src/data/data.py` for an example pytorch dataset that yields sy
 </div>
 <div style="text-align:center;">
   <div style="display:inline-block; margin:0 10px;">
-    <img src="https://github.com/miccunifi/FRED/blob/main/static/videos/webps/rgb_indoor.webp?raw=true" width="400"/>
+    <img src="https://github.com/miccunifi/FRED/blob/main/static/videos/webps/rgb_indoor.webp?raw=true" width="390"/>
   </div>
   <div style="display:inline-block; margin:0 10px;">
-    <img src="https://github.com/miccunifi/FRED/blob/main/static/videos/webps/event_indoor.webp?raw=true" width="400"/>
+    <img src="https://github.com/miccunifi/FRED/blob/main/static/videos/webps/event_indoor.webp?raw=true" width="390"/>
   </div>
 </div>
 
