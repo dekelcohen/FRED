@@ -3,9 +3,8 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2506.05163-b31b1b.svg)](https://arxiv.org/abs/2506.05163)
 [![paper](https://img.shields.io/badge/paper-ACMMM2025-b31b1b.svg)](https://dl.acm.org/doi/pdf/10.1145/3746027.3758271)
-[![huggingface](https://img.shields.io/badge/dataset-Huggingface-b31b1b.svg)](https://huggingface.co/datasets/GabrieleMagrini/FRED
-)
-
+[![huggingface](https://img.shields.io/badge/dataset-Huggingface-b31b1b.svg)](https://huggingface.co/datasets/GabrieleMagrini/FRED)
+[![survey](https://img.shields.io/badge/DroneDetectionSurvey-CVPRw2025-b31b1b.svg)](https://openaccess.thecvf.com/content/ICCV2025W/NeVi/papers/Magrini_Drone_Detection_with_Event_Cameras_ICCVW_2025_paper.pdf)
 
 <div align="center">
   <img src="https://github.com/miccunifi/FRED/blob/main/static/videos/sliders_auto/montage.webp?raw=true" 
