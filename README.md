@@ -108,41 +108,27 @@ Please refer to `src/data/data.py` for an example pytorch dataset that yields sy
 
 ## 🖼️ Examples
 
-<div align="center">
-            <h1 style="font-size: 2rem; margin-bottom: 1rem; color: #fff;">Night</h1>
-</div>
-<div style="text-align:center;">
-  <div style="display:inline-block; margin:0 10px;">
-    <img src="https://github.com/miccunifi/FRED/blob/main/static/videos/webps/rgb_night.webp?raw=true" width="390"/>
-  </div>
-  <div style="display:inline-block; margin:0 10px;">
-    <img src="https://github.com/miccunifi/FRED/blob/main/static/videos/webps/event_night.webp?raw=true" width="390"/>
-  </div>
-</div>
 
 
 <div align="center">
-            <h1 style="font-size: 2rem; margin-bottom: 1rem; color: #fff;">Raining</h1>
-</div>
-<div style="text-align:center;">
-  <div style="display:inline-block; margin:0 10px;">
-    <img src="https://github.com/miccunifi/FRED/blob/main/static/videos/webps/rgb_rain.webp?raw=true" width="390"/>
-  </div>
-  <div style="display:inline-block; margin:0 10px;">
-    <img src="https://github.com/miccunifi/FRED/blob/main/static/videos/webps/event_rain.webp?raw=true" width="390"/>
-  </div>
+  <h1 style="font-size: 2rem; margin-bottom: 1rem; color: #fff;">Night</h1>
+  
+  <img src="https://github.com/miccunifi/FRED/blob/main/static/videos/webps/rgb_night.webp?raw=true" width="400" />
+  <img src="https://github.com/miccunifi/FRED/blob/main/static/videos/webps/event_night.webp?raw=true" width="400" />
 </div>
 
 <div align="center">
-            <h1 style="font-size: 2rem; margin-bottom: 1rem; color: #fff;">Indoor</h1>
+  <h1 style="font-size: 2rem; margin-bottom: 1rem; color: #fff;">Raining</h1>
+  
+  <img src="https://github.com/miccunifi/FRED/blob/main/static/videos/webps/rgb_rain.webp?raw=true" width="400" />
+  <img src="https://github.com/miccunifi/FRED/blob/main/static/videos/webps/event_rain.webp?raw=true" width="400" />
 </div>
-<div style="text-align:center;">
-  <div style="display:inline-block; margin:0 10px;">
-    <img src="https://github.com/miccunifi/FRED/blob/main/static/videos/webps/rgb_indoor.webp?raw=true" width="390"/>
-  </div>
-  <div style="display:inline-block; margin:0 10px;">
-    <img src="https://github.com/miccunifi/FRED/blob/main/static/videos/webps/event_indoor.webp?raw=true" width="390"/>
-  </div>
+
+<div align="center">
+  <h1 style="font-size: 2rem; margin-bottom: 1rem; color: #fff;">Indoor</h1>
+  
+  <img src="https://github.com/miccunifi/FRED/blob/main/static/videos/webps/rgb_indoor.webp?raw=true" width="390" />
+  <img src="https://github.com/miccunifi/FRED/blob/main/static/videos/webps/event_indoor.webp?raw=true" width="390" />
 </div>
 
 
