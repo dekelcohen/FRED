@@ -16,7 +16,7 @@
 Official repository for the  **FRED dataset**, a large-scale multimodal dataset specifically designed for drone detection, tracking, and trajectory forecasting, with spatiotemprally  **synchronized RGB and event data**.
 It includes **train** and **test** splits with zipped subfolders for each sequence.
 
-The full dataset it available for download on the official [HuggingFace page]🤗(https://huggingface.co/datasets/GabrieleMagrini/FRED).
+The full dataset it available for download on the official [HuggingFace page](https://huggingface.co/datasets/GabrieleMagrini/FRED)🤗.
 
 A **Google Drive mirror**📂 of the dataset can also be found [here](https://drive.google.com/drive/folders/1pISIErXOx76xmCqkwhS3-azWOMlTKZMp?usp=share_link).
 The dataset splits in .txt format, along with the alternative **challenging split**, can be found [here](https://github.com/miccunifi/FRED/tree/main/dataset_splits).
