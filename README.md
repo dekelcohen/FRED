@@ -152,6 +152,7 @@ Please refer to `src/data/data.py` for an example pytorch dataset that yields sy
    </picture>
   </a>
 </div>
+
 ## ✨ Citation
 
 If you use **FRED** in your research, please cite:
