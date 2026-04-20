@@ -24,6 +24,9 @@ The dataset splits in .txt format, along with the alternative **challenging spli
 **Demos and examples** can be found in the official [website](https://miccunifi.github.io/FRED/). Check it out, it's pretty cool! :)
 
 
+### You can now also check out Ev-Flying, our newly released flying object dataset focusing on birds and insect detection with event-level tracking labels!
+You can find it here: https://github.com/MagriniGabriele/Ev-Flying
+
 ---
 
 ## 📂 Dataset Structure
