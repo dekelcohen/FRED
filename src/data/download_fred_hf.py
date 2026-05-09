@@ -7,6 +7,7 @@ from huggingface_hub import snapshot_download
 
 def download_and_extract_hf(repo_id="GabrieleMagrini/FRED", local_dir="FRED_HF", specific_zips=None):
     print(f"Connecting to '{repo_id}' on Hugging Face...")
+    print(f"Target local directory: {os.path.abspath(local_dir)}")
     
     # Restrict download to specific zip files if provided
     allow_patterns = None
@@ -25,25 +26,34 @@ def download_and_extract_hf(repo_id="GabrieleMagrini/FRED", local_dir="FRED_HF",
     )
     
     # 2. Extract zipped sequences
-    # Based on the repo structure: local_dir/train/0.zip, 1.zip...
     zip_files = glob(os.path.join(local_dir, "**", "*.zip"), recursive=True)
     
     if zip_files:
         print(f"\nFound {len(zip_files)} zip files. Extracting...")
         for zip_path in tqdm(zip_files, desc="Processing Zip Files"):
             
-            # e.g., zip_path = "FRED_HF/train/218.zip"
-            # extract_dir will become "FRED_HF/train/218"
-            extract_dir = os.path.splitext(zip_path)[0] 
-            # Create the sequence directory
-            os.makedirs(extract_dir, exist_ok=True)
+            # Example zip_path: "FRED_HF/train/100.zip"
+            # Extract to the directory CONTAINING the zip: "FRED_HF/train"
+            # Ex: extract_dir will become "FRED_HF/train/218"
+            # Because the zip internally already contains the "100" folder.
+            extract_dir = os.path.dirname(zip_path)
             
             try:
-                # Extract the files (coordinates.txt, RGB folder, Event folder) into the new directory
                 with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+                    # Check the internal structure of the zip
+                    # If the zip already has a top-level folder (e.g., "100/coordinates.txt")
+                    # we extract it to "FRED_HF/train/". 
+                    # If it doesn't (e.g., "coordinates.txt" at the root), we extract it to "FRED_HF/train/100/"
+                    top_level_items = {os.path.normpath(name).split(os.sep)[0] for name in zip_ref.namelist()}
+                    folder_name = os.path.basename(zip_path).replace(".zip", "")
+                    
+                    if folder_name not in top_level_items:
+                        extract_dir = os.path.join(extract_dir, folder_name)
+                        os.makedirs(extract_dir, exist_ok=True)
+                        
                     zip_ref.extractall(extract_dir)
                     
-                # Clean up: Delete the zip file after extraction
+                # Clean up: Delete the zip file after successful extraction
                 os.remove(zip_path)
                 
             except zipfile.BadZipFile:
@@ -59,6 +69,8 @@ if __name__ == "__main__":
         "--zips", 
         nargs='*', # Accepts zero or multiple arguments
         help="Specific zip filenames to download (e.g., 218.zip 1.zip). If omitted, downloads everything.", 
-        default=None)
+        default=None
+    )
     args = parser.parse_args()
+
     download_and_extract_hf(specific_zips=args.zips)
