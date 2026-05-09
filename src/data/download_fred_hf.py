@@ -1,5 +1,6 @@
-# python src/data/download_fred_hf.py 
-  # Download entire FRED train + test 
+
+# HF_TOKEN="hf_your_token_here" python src/data/download_fred_hf.py 
+  # Download entire FRED train + test .HF_TOKEN (optional) for faster downloads 
 # python src/data/download_fred_hf.py --zips 100.zip 101.zip 110.zip
   # Download 100.zip + 101.zip video seqs for train 110.zip for test and https://huggingface.co/datasets/GabrieleMagrini/FRED/tree/main/train
   # Note: Can call download script multiple times - it merges all downloads in train/<seq num> and test/<seq num>
@@ -10,7 +11,7 @@ from glob import glob
 from tqdm import tqdm
 from huggingface_hub import snapshot_download
 
-def download_and_extract_hf(repo_id="GabrieleMagrini/FRED", local_dir="FRED_HF", specific_zips=None):
+def download_and_extract_hf(repo_id="GabrieleMagrini/FRED", local_dir="FRED_HF", specific_zips=None, token=None):
     print(f"Connecting to '{repo_id}' on Hugging Face...")
     print(f"Target local directory: {os.path.abspath(local_dir)}")
     
@@ -20,6 +21,9 @@ def download_and_extract_hf(repo_id="GabrieleMagrini/FRED", local_dir="FRED_HF",
         # **/* matches the file regardless of if it's in the train/ or test/ folder
         allow_patterns =[f"**/{z}" for z in specific_zips]
         print(f"Restricting download to only match: {allow_patterns}")
+
+    if token:
+        print("Using provided Hugging Face token for authenticated/faster downloads.")
         
     # 1. Download the raw dataset repository
     snapshot_download(
@@ -27,7 +31,8 @@ def download_and_extract_hf(repo_id="GabrieleMagrini/FRED", local_dir="FRED_HF",
         repo_type="dataset",
         local_dir=local_dir,
         allow_patterns=allow_patterns,
-        ignore_patterns=["*.parquet", "*.git*"] # Skip auto-generated HF metadata files
+        ignore_patterns=["*.parquet", "*.git*"], # Skip auto-generated HF metadata files
+        token=token # Passes the HF token for better speeds / bypassing rate limits
     )
     
     # 2. Extract zipped sequences
@@ -76,6 +81,13 @@ if __name__ == "__main__":
         help="Specific zip filenames to download (e.g., 218.zip 1.zip). If omitted, downloads everything.", 
         default=None
     )
+    # Add token argument, prioritizing explicit command-line arg, then falling back to env variable
+    parser.add_argument(
+        "--token",
+        type=str,
+        help="Hugging Face API token. Defaults to HF_TOKEN environment variable if set.",
+        default=os.environ.get("HF_TOKEN")
+    )
     args = parser.parse_args()
 
-    download_and_extract_hf(specific_zips=args.zips)
+    download_and_extract_hf(specific_zips=args.zips, token=args.token)

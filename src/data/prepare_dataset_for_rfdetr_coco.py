@@ -1,3 +1,4 @@
+# /data/repos/FRED> python src/data/prepare_dataset_for_rfdetr_coco.py --val-split 0.5
 import os
 import json
 import shutil

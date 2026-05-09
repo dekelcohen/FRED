@@ -1,12 +1,11 @@
-# PyTorch ecosystem
-torch
-torchvision
+# Install torch and torchvision according to your cuda version 
+# Ex: cuda 12.6 --> pip install torch torchvision --index-url https://download.pytorch.org/whl/cu126
 
 # Hugging Face for downloading the dataset
 huggingface_hub
 
 # Roboflow RF-DETR for model training and inference
-rfdetr
+rfdetr[train,loggers]
 
 # Utilities used in your data.py and the preparation scripts
 tqdm
