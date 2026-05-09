@@ -1,4 +1,4 @@
-from rfdetr import RFDETRBase
+from rfdetr import RFDETRLarge
 
 def main():
     DATASET_DIR = "rfdetr_dataset"
@@ -6,7 +6,7 @@ def main():
     
     print("Initializing RF-DETR Base Model...")
     # Downloads the pretrained Roboflow weights automatically
-    model = RFDETRBase() 
+    model = RFDETRLarge() 
     
     print(f"Starting training on dataset at {DATASET_DIR}...")
     #  RF-DETR uses PyTorch Lightning under the hood, you can pass standard Lightning Trainer arguments directly into model.train() via kwargs
@@ -24,7 +24,7 @@ def main():
     
     # The training loop saves the best checkpoint here:
     best_weights_path = f"{OUTPUT_DIR}/checkpoint_best_total.pth"
-    best_model = RFDETRBase(pretrain_weights=best_weights_path)
+    best_model = RFDETRLarge(pretrain_weights=best_weights_path)
     
     # Run prediction on the first test image
     test_img_path = f"{DATASET_DIR}/test/test_0.jpg"
