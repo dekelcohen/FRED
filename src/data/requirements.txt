@@ -1,0 +1,14 @@
+# PyTorch ecosystem
+torch
+torchvision
+
+# Hugging Face for downloading the dataset
+huggingface_hub
+
+# Roboflow RF-DETR for model training and inference
+rfdetr
+
+# Utilities used in your data.py and the preparation scripts
+tqdm
+natsort
+Pillow

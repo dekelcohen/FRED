@@ -9,6 +9,7 @@ def main():
     model = RFDETRBase() 
     
     print(f"Starting training on dataset at {DATASET_DIR}...")
+    #  RF-DETR uses PyTorch Lightning under the hood, you can pass standard Lightning Trainer arguments directly into model.train() via kwargs
     model.train(
         dataset_dir=DATASET_DIR, 
         epochs=10,               # Adjust based on your time constraints
