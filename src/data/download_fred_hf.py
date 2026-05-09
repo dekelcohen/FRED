@@ -1,3 +1,8 @@
+# python src/data/download_fred_hf.py 
+  # Download entire FRED train + test 
+# python src/data/download_fred_hf.py --zips 100.zip 101.zip 110.zip
+  # Download 100.zip + 101.zip video seqs for train 110.zip for test and https://huggingface.co/datasets/GabrieleMagrini/FRED/tree/main/train
+  # Note: Can call download script multiple times - it merges all downloads in train/<seq num> and test/<seq num>
 import os
 import zipfile
 import argparse
