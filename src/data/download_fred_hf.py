@@ -59,4 +59,6 @@ if __name__ == "__main__":
         "--zips", 
         nargs='*', # Accepts zero or multiple arguments
         help="Specific zip filenames to download (e.g., 218.zip 1.zip). If omitted, downloads everything.", 
-        default=
+        default=None)
+    args = parser.parse_args()
+    download_and_extract_hf(specific_zips=args.zips)
